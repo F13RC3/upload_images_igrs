@@ -29,23 +29,26 @@
    </head>
    <body>
       <form method="POST" action="/upload" enctype="multipart/form-data">
-         <div class="container">
-            <h1>Please upload images as per your District and Tehsil</h1>
-            <div class="dropdown">
-               <b><label for="district">District:</label></b>
-               <select name= "district" class="btn btn-default dropdown-toggle" id="district" required>
+         <div class="container" >
+            <h1 class="d-flex justify-content-center">Please upload images as per your District and Tehsil</h1>
+            <br>
+            <div class="d-flex justify-content-center">
+               <b><label for="district">District:</label></b>&nbsp
+               <select name= "district" class="btn btn-primary dropdown-toggle" id="district" required>
                   <option value="">Select a District</option>
                   {% for category in categories.keys() %}
                   <option value="{{ category }}">{{ category }}</option>
                   {% endfor %}
                </select>
             </div>
-            <div class="dropdown">
-               <b><label for="tehsil">Tehsil:</label></b>
-               <select class="btn btn-default dropdown-toggle" name= "tehsil" id="tehsil" required></select>
+            <br>
+            <div class="d-flex justify-content-center">
+               <b><label for="tehsil">Tehsil:</label></b>&nbsp
+               <select class="btn btn-primary dropdown-toggle" name= "tehsil" id="tehsil" required></select>
             </div>
+            <br>
             <div class="mb-3">
-               <h2>Upload Image</h2>
+               <h2 >Upload Image</h2>
                <input type="file" name="file" accept='image/*' class="form-control"  multiple required>
                <br>
                <input class="btn btn-primary" type="submit" value="Upload">
