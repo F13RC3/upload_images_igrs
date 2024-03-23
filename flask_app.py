@@ -60,7 +60,7 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = file.filename
             file.save(os.path.join(path, filename))
-    return redirect(url_for('index'))
+    return render_template('success_upload.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
